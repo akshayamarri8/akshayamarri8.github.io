@@ -1,0 +1,3654 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Akshaya Marri | IoT Portfolio</title>
+
+<meta name="description"
+content="Akshaya Marri - B.Tech Internet of Things student at Ramchandra Engineering College.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+
+<style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #050511;
+    color: #ffffff;
+    font-family: "Inter", sans-serif;
+    overflow-x: hidden;
+}
+
+::selection {
+    background: #8b5cf6;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: min(1180px, 90%);
+    margin: auto;
+}
+
+
+/* =========================================================
+   COLORS
+========================================================= */
+
+:root {
+
+    --purple: #8b5cf6;
+    --pink: #ec4899;
+    --cyan: #06b6d4;
+    --blue: #3b82f6;
+    --green: #22c55e;
+
+    --white: #ffffff;
+    --muted: #9696aa;
+
+}
+
+
+/* =========================================================
+   3D BACKGROUND
+========================================================= */
+
+#three-container {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: -5;
+
+    pointer-events: none;
+
+}
+
+#three-container canvas {
+    display: block;
+}
+
+
+.background-gradient {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: -4;
+
+    pointer-events: none;
+
+    background:
+
+        radial-gradient(
+            circle at 12% 18%,
+            rgba(139,92,246,0.20),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 88% 25%,
+            rgba(6,182,212,0.14),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 75% 82%,
+            rgba(236,72,153,0.13),
+            transparent 30%
+        );
+
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+
+    position: fixed;
+
+    top: 20px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: min(1100px, 92%);
+
+    height: 64px;
+
+    padding: 0 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.10);
+
+    background:
+        rgba(8,8,20,0.68);
+
+    backdrop-filter: blur(22px);
+
+    border-radius: 20px;
+
+    z-index: 1000;
+
+    box-shadow:
+        0 15px 50px
+        rgba(0,0,0,0.25);
+
+}
+
+
+.logo {
+
+    font-family: "Space Grotesk";
+
+    font-size: 21px;
+
+    font-weight: 700;
+
+    letter-spacing: -1px;
+
+}
+
+
+.logo span {
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--purple),
+            var(--pink),
+            var(--cyan)
+        );
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+}
+
+
+.nav-links {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 28px;
+
+    list-style: none;
+
+}
+
+
+.nav-links a {
+
+    font-size: 13px;
+
+    color: #aaaabc;
+
+    transition: 0.3s;
+
+}
+
+
+.nav-links a:hover {
+    color: white;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    position: relative;
+
+    padding-top: 100px;
+
+}
+
+
+.hero-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1.05fr
+        0.95fr;
+
+    align-items: center;
+
+    gap: 40px;
+
+}
+
+
+.availability {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 9px 15px;
+
+    border-radius: 100px;
+
+    background:
+        rgba(139,92,246,0.10);
+
+    border:
+        1px solid
+        rgba(139,92,246,0.30);
+
+    color: #c8b5ff;
+
+    font-size: 12px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.live-dot {
+
+    width: 7px;
+
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #22c55e;
+
+    box-shadow:
+        0 0 15px #22c55e;
+
+}
+
+
+.hero h1 {
+
+    font-family: "Space Grotesk";
+
+    font-size:
+        clamp(50px, 7.5vw, 92px);
+
+    line-height: 0.92;
+
+    letter-spacing: -6px;
+
+    margin-bottom: 28px;
+
+}
+
+
+.gradient-text {
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff 5%,
+            #a78bfa 35%,
+            #22d3ee 65%,
+            #f472b6 90%
+        );
+
+    background-size: 300%;
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    animation:
+        gradientAnimation 7s ease infinite;
+
+}
+
+
+@keyframes gradientAnimation {
+
+    0% {
+        background-position: 0%;
+    }
+
+    50% {
+        background-position: 100%;
+    }
+
+    100% {
+        background-position: 0%;
+    }
+
+}
+
+
+.hero-description {
+
+    max-width: 620px;
+
+    color: var(--muted);
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    margin-bottom: 32px;
+
+}
+
+
+.hero-description strong {
+    color: white;
+}
+
+
+.hero-buttons {
+
+    display: flex;
+
+    gap: 14px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 14px 20px;
+
+    border-radius: 13px;
+
+    font-size: 13px;
+
+    transition: 0.35s;
+
+}
+
+
+.button-primary {
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--purple),
+            var(--blue)
+        );
+
+    box-shadow:
+        0 10px 35px
+        rgba(99,102,241,0.25);
+
+}
+
+
+.button-primary:hover {
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 18px 45px
+        rgba(99,102,241,0.38);
+
+}
+
+
+.button-outline {
+
+    border:
+        1px solid
+        rgba(255,255,255,0.15);
+
+    background:
+        rgba(255,255,255,0.04);
+
+}
+
+
+.button-outline:hover {
+
+    background:
+        rgba(255,255,255,0.09);
+
+    transform:
+        translateY(-4px);
+
+}
+
+
+/* =========================================================
+   HERO 3D
+========================================================= */
+
+.hero-visual {
+
+    position: relative;
+
+    height: 500px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.orb {
+
+    width: 320px;
+
+    height: 320px;
+
+    border-radius: 50%;
+
+    position: relative;
+
+    background:
+
+        radial-gradient(
+            circle at 30% 25%,
+            #ffffff,
+            #a78bfa 15%,
+            #7c3aed 35%,
+            #312e81 60%,
+            #09091a 80%
+        );
+
+    box-shadow:
+
+        0 0 70px
+        rgba(139,92,246,0.30),
+
+        inset -30px -30px 80px
+        rgba(0,0,0,0.6);
+
+    animation:
+        orbFloat 6s ease-in-out infinite;
+
+}
+
+
+.orb::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -35px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(6,182,212,0.45);
+
+    transform:
+        rotateX(65deg)
+        rotateZ(15deg);
+
+}
+
+
+.orb::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -65px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(236,72,153,0.30);
+
+    transform:
+        rotateY(65deg)
+        rotateZ(-20deg);
+
+}
+
+
+@keyframes orbFloat {
+
+    0%,100% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    50% {
+        transform:
+            translateY(-20px)
+            rotate(5deg);
+    }
+
+}
+
+
+/* =========================================================
+   FLOATING TAGS
+========================================================= */
+
+.floating-tag {
+
+    position: absolute;
+
+    padding: 10px 14px;
+
+    border-radius: 10px;
+
+    background:
+        rgba(10,10,25,0.70);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.12);
+
+    backdrop-filter: blur(15px);
+
+    font-size: 10px;
+
+    animation:
+        floatingTag 5s ease-in-out infinite;
+
+}
+
+
+.tag-iot {
+
+    top: 12%;
+
+    right: 10%;
+
+    color: #67e8f9;
+
+}
+
+
+.tag-java {
+
+    bottom: 18%;
+
+    right: 5%;
+
+    color: #c4b5fd;
+
+    animation-delay: 1s;
+
+}
+
+
+.tag-data {
+
+    bottom: 10%;
+
+    left: 8%;
+
+    color: #f9a8d4;
+
+    animation-delay: 2s;
+
+}
+
+
+@keyframes floatingTag {
+
+    0%,100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-15px);
+    }
+
+}
+
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+section {
+    padding: 120px 0;
+}
+
+
+.section-header {
+    margin-bottom: 55px;
+}
+
+
+.section-number {
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    color: #85859b;
+
+    text-transform: uppercase;
+
+    margin-bottom: 12px;
+
+}
+
+
+.section-title {
+
+    font-family: "Space Grotesk";
+
+    font-size:
+        clamp(36px,5vw,58px);
+
+    letter-spacing: -3px;
+
+}
+
+
+.section-description {
+
+    max-width: 700px;
+
+    margin-top: 15px;
+
+    color: #77778b;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================================
+   GLASS
+========================================================= */
+
+.glass {
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.07),
+            rgba(255,255,255,0.025)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,0.10);
+
+    backdrop-filter:
+        blur(20px);
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 20px 60px
+        rgba(0,0,0,0.20);
+
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1.2fr
+        0.8fr;
+
+    gap: 20px;
+
+}
+
+
+.about-card {
+    padding: 38px;
+}
+
+
+.about-card p {
+
+    color: #9696aa;
+
+    line-height: 1.9;
+
+    font-size: 14px;
+
+}
+
+
+.about-card strong {
+    color: white;
+}
+
+
+.stats-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap: 14px;
+
+}
+
+
+.stat {
+
+    padding: 25px;
+
+    min-height: 145px;
+
+}
+
+
+.stat-number {
+
+    font-family: "Space Grotesk";
+
+    font-size: 35px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.stat-label {
+
+    color: #77778b;
+
+    font-size: 11px;
+
+}
+
+
+.stat-purple {
+    box-shadow:
+        inset 0 0 60px
+        rgba(139,92,246,0.07);
+}
+
+
+.stat-cyan {
+    box-shadow:
+        inset 0 0 60px
+        rgba(6,182,212,0.07);
+}
+
+
+.stat-pink {
+    box-shadow:
+        inset 0 0 60px
+        rgba(236,72,153,0.07);
+}
+
+
+.stat-blue {
+    box-shadow:
+        inset 0 0 60px
+        rgba(59,130,246,0.07);
+}
+
+
+/* =========================================================
+   COURSE CATEGORIES
+========================================================= */
+
+.course-category {
+    margin-bottom: 65px;
+}
+
+
+.category-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 22px;
+
+}
+
+
+.category-index {
+
+    width: 38px;
+
+    height: 38px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 10px;
+
+    background:
+        rgba(139,92,246,0.10);
+
+    border:
+        1px solid
+        rgba(139,92,246,0.25);
+
+    color: #c4b5fd;
+
+}
+
+
+.category-title h3 {
+
+    font-family: "Space Grotesk";
+
+    font-size: 23px;
+
+}
+
+
+.course-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap: 15px;
+
+}
+
+
+.course-card {
+
+    padding: 26px;
+
+    min-height: 200px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    transition:
+        transform .4s,
+        border-color .4s;
+
+}
+
+
+.course-card:hover {
+
+    border-color:
+        rgba(139,92,246,0.35);
+
+}
+
+
+.course-number {
+
+    color: #55556a;
+
+    font-size: 10px;
+
+}
+
+
+.course-icon {
+
+    width: 46px;
+
+    height: 46px;
+
+    border-radius: 13px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin: 18px 0;
+
+    font-size: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(139,92,246,0.18),
+            rgba(6,182,212,0.10)
+        );
+
+}
+
+
+.course-card h4 {
+
+    font-family: "Space Grotesk";
+
+    font-size: 16px;
+
+    line-height: 1.25;
+
+    margin-bottom: 9px;
+
+}
+
+
+.course-card p {
+
+    color: #74748a;
+
+    font-size: 11px;
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================================================
+   EDUCATION
+========================================================= */
+
+.education-wrapper {
+
+    position: relative;
+
+    padding-left: 35px;
+
+    border-left:
+        1px solid
+        rgba(255,255,255,0.10);
+
+}
+
+
+.education-item {
+
+    position: relative;
+
+    padding-bottom: 55px;
+
+}
+
+
+.education-item:last-child {
+    padding-bottom: 0;
+}
+
+
+.education-item::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: -41px;
+
+    top: 2px;
+
+    width: 11px;
+
+    height: 11px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--purple),
+            var(--cyan)
+        );
+
+    box-shadow:
+        0 0 20px
+        rgba(139,92,246,0.6);
+
+}
+
+
+.education-year {
+
+    color: #8b8ba0;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.education-item h3 {
+
+    font-family: "Space Grotesk";
+
+    font-size: 25px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.education-item p {
+
+    color: #77778b;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================================================
+   PROJECTS
+========================================================= */
+
+.projects-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap: 20px;
+
+}
+
+
+.project {
+
+    min-height: 330px;
+
+    padding: 30px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    transition:
+        transform .5s,
+        border-color .5s;
+
+}
+
+
+.project:hover {
+
+    border-color:
+        rgba(255,255,255,0.22);
+
+}
+
+
+.project::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+
+    height: 180px;
+
+    border-radius: 50%;
+
+    right: -70px;
+
+    top: -70px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(139,92,246,0.25),
+            rgba(6,182,212,0.05)
+        );
+
+    filter: blur(4px);
+
+}
+
+
+.project-number {
+
+    font-size: 10px;
+
+    color: #68687d;
+
+}
+
+
+.project h3 {
+
+    font-family: "Space Grotesk";
+
+    font-size: 28px;
+
+    margin-top: 70px;
+
+    margin-bottom: 12px;
+
+}
+
+
+.project p {
+
+    max-width: 450px;
+
+    color: #77778b;
+
+    font-size: 12px;
+
+    line-height: 1.8;
+
+}
+
+
+.project-tech {
+
+    position: absolute;
+
+    bottom: 25px;
+
+    left: 30px;
+
+    display: flex;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.project-tech span {
+
+    padding: 7px 10px;
+
+    border-radius: 50px;
+
+    font-size: 9px;
+
+    color: #aaaabc;
+
+    background:
+        rgba(255,255,255,0.045);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.08);
+
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact {
+
+    text-align: center;
+
+    padding: 90px 30px;
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+.contact::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+
+    height: 500px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(139,92,246,0.16),
+            transparent 65%
+        );
+
+    left: 50%;
+
+    top: 50%;
+
+    transform:
+        translate(-50%,-50%);
+
+}
+
+
+.contact-content {
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+.contact h2 {
+
+    font-family: "Space Grotesk";
+
+    font-size:
+        clamp(40px,6vw,75px);
+
+    line-height: 1;
+
+    letter-spacing: -4px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.contact p {
+
+    color: #77778b;
+
+    font-size: 14px;
+
+    margin-bottom: 30px;
+
+}
+
+
+.email {
+
+    display: block;
+
+    width: fit-content;
+
+    margin: 25px auto 0;
+
+    color: #d6d6e0;
+
+    font-size: 16px;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,0.25);
+
+    padding-bottom: 5px;
+
+}
+
+
+/* =========================================================
+   SOCIAL
+========================================================= */
+
+.social-links {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-top: 30px;
+
+}
+
+
+.social {
+
+    width: 46px;
+
+    height: 46px;
+
+    border-radius: 13px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        rgba(255,255,255,0.045);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.09);
+
+    color: #aaaabc;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    transition: .3s;
+
+}
+
+
+.social:hover {
+
+    transform:
+        translateY(-5px);
+
+    color: white;
+
+    border-color:
+        rgba(139,92,246,0.5);
+
+    box-shadow:
+        0 10px 25px
+        rgba(139,92,246,0.15);
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+
+    padding: 30px 0;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,0.07);
+
+    color: #5e5e70;
+
+    font-size: 11px;
+
+}
+
+
+.footer-content {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+
+/* =========================================================
+   REVEAL ANIMATION
+========================================================= */
+
+.reveal {
+
+    opacity: 0;
+
+    transform:
+        translateY(35px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+
+}
+
+
+.reveal.active {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1000px) {
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-visual {
+        display: none;
+    }
+
+    .course-grid {
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+}
+
+
+@media(max-width:800px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .navbar {
+        width: 92%;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 90px 0;
+    }
+
+}
+
+
+@media(max-width:600px) {
+
+    .course-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+    .hero h1 {
+        letter-spacing: -4px;
+    }
+
+    .section-title {
+        letter-spacing: -2px;
+    }
+
+    .contact h2 {
+        letter-spacing: -2px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     3D BACKGROUND
+========================================================= -->
+
+<div id="three-container"></div>
+
+<div class="background-gradient"></div>
+
+
+
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        AKSHAYA<span>.</span>
+    </div>
+
+    <ul class="nav-links">
+
+        <li>
+            <a href="#about">About</a>
+        </li>
+
+        <li>
+            <a href="#courses">Courses</a>
+        </li>
+
+        <li>
+            <a href="#education">Education</a>
+        </li>
+
+        <li>
+            <a href="#projects">Projects</a>
+        </li>
+
+        <li>
+            <a href="#contact">Contact</a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero">
+
+    <div class="container">
+
+        <div class="hero-grid">
+
+
+            <div class="hero-content reveal">
+
+
+                <div class="availability">
+
+                    <span class="live-dot"></span>
+
+                    Second Year · Internet of Things
+
+                </div>
+
+
+                <h1>
+
+                    Akshaya
+
+                    <br>
+
+                    <span class="gradient-text">
+                        Marri.
+                    </span>
+
+                </h1>
+
+
+                <p class="hero-description">
+
+                    I'm a second-year
+                    <strong>B.Tech Internet of Things</strong>
+                    student at
+                    <strong>Ramchandra Engineering College</strong>.
+
+                    I'm exploring programming,
+                    algorithms, computer systems,
+                    IoT technologies and problem solving
+                    while building my technical foundation.
+
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <a
+                        href="#courses"
+                        class="button button-primary">
+
+                        Explore My Skills →
+
+                    </a>
+
+
+                    <a
+                        href="mailto:akshaya8.marri@gmail.com"
+                        class="button button-outline">
+
+                        Contact Me
+
+                    </a>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- 3D VISUAL -->
+
+            <div class="hero-visual">
+
+                <div class="orb"></div>
+
+
+                <div class="floating-tag tag-iot">
+                    IoT × EMBEDDED
+                </div>
+
+
+                <div class="floating-tag tag-java">
+                    JAVA × DSA
+                </div>
+
+
+                <div class="floating-tag tag-data">
+                    LOGIC × DATA
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     ABOUT
+========================================================= -->
+
+<section id="about">
+
+    <div class="container">
+
+
+        <div class="section-header reveal">
+
+            <div class="section-number">
+                01 — About
+            </div>
+
+            <h2 class="section-title">
+                Who I am.
+            </h2>
+
+        </div>
+
+
+        <div class="about-grid">
+
+
+            <div class="glass about-card reveal">
+
+                <p>
+
+                    Hello, I'm
+                    <strong>Akshaya Marri</strong>.
+
+                    <br><br>
+
+                    I am currently pursuing my
+                    <strong>second year B.Tech</strong>
+                    in
+                    <strong>Internet of Things (IoT)</strong>
+                    at
+                    <strong>Ramchandra Engineering College</strong>.
+
+                    <br><br>
+
+                    My academic journey covers
+                    programming, data structures,
+                    algorithms, mathematics,
+                    digital systems, computer
+                    organisation and IoT.
+
+                    <br><br>
+
+                    I am interested in developing
+                    strong technical fundamentals
+                    and learning how software,
+                    hardware and connected systems
+                    work together.
+
+                </p>
+
+            </div>
+
+
+            <div class="stats-grid reveal">
+
+
+                <div class="glass stat stat-purple">
+
+                    <div class="stat-number">
+                        02
+                    </div>
+
+                    <div class="stat-label">
+                        CURRENT YEAR
+                    </div>
+
+                </div>
+
+
+                <div class="glass stat stat-cyan">
+
+                    <div class="stat-number">
+                        IoT
+                    </div>
+
+                    <div class="stat-label">
+                        SPECIALIZATION
+                    </div>
+
+                </div>
+
+
+                <div class="glass stat stat-pink">
+
+                    <div class="stat-number">
+                        20+
+                    </div>
+
+                    <div class="stat-label">
+                        ACADEMIC SUBJECTS
+                    </div>
+
+                </div>
+
+
+                <div class="glass stat stat-blue">
+
+                    <div class="stat-number">
+                        ∞
+                    </div>
+
+                    <div class="stat-label">
+                        LEARNING
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     COURSES
+========================================================= -->
+
+<section id="courses">
+
+    <div class="container">
+
+
+        <div class="section-header reveal">
+
+            <div class="section-number">
+                02 — Academic Foundation
+            </div>
+
+            <h2 class="section-title">
+                What I've studied.
+            </h2>
+
+            <p class="section-description">
+
+                A multidisciplinary foundation covering
+                programming, algorithms, mathematics,
+                computer systems, IoT and professional
+                development.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- =====================================================
+             PROGRAMMING & ALGORITHMS
+        ====================================================== -->
+
+        <div class="course-category">
+
+
+            <div class="category-title reveal">
+
+                <div class="category-index">
+                    01
+                </div>
+
+                <h3>
+                    Programming & Algorithms
+                </h3>
+
+            </div>
+
+
+            <div class="course-grid">
+
+
+                <div class="glass course-card reveal">
+
+                    <div class="course-number">
+                        01
+                    </div>
+
+                    <div class="course-icon">
+                        C
+                    </div>
+
+                    <h4>
+                        Introduction to C Programming
+                    </h4>
+
+                    <p>
+                        Programming fundamentals,
+                        variables, functions, arrays
+                        and problem solving.
+                    </p>
+
+                </div>
+
+
+                <div class="glass course-card reveal">
+
+                    <div class="course-number">
+                        02
+                    </div>
+
+                    <div class="course-icon">
+                        DS
+                    </div>
+
+                    <h4>
+                        Data Structures through C
+                    </h4>
+
+                    <p>
+                        Core data structures and
+                        algorithmic problem solving
+                        using C.
+                    </p>
+
+                </div>
+
+
+                <div class="glass course-card reveal">
+
+                    <div class="course-number">
+                        03
+                    </div>
+
+                    <div class="course-icon">
+                        A
+                    </div>
+
+                    <h4>
+                        Advanced Data Structures
+                    </h4>
+
+                    <p>
+                        Advanced structures and
+                        efficient computational
+                        techniques.
+                    </p>
+
+                </div>
+
+
+                <div class="glass course-card reveal">
+
+                    <div class="course-number">
+                        04
+                    </div>
+
+                    <div class="course-icon">
+                        DAA
+                    </div>
+
+                    <h4>
+                        Algorithm Analysis
+                    </h4>
+
+                    <p>
+                        Algorithm design, complexity
+                        analysis and efficient solutions.
+                    </p>
+
+                </div>
+
+
+                <div class="glass course-card reveal">
+
+                    <div class="course-number">
+                        05
+                    </div>
+
+                    <div class="course-icon">
+                        ☕
+                    </div>
+
+                    <h4>
+                        Java Programming
+                    </h4>
+
+                    <p>
+                        Object-oriented programming
+                        and Java programming concepts.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================================================
+             MATHEMATICS & LOGIC
+        ====================================================== -->
+
+        <div class="course-category">
+
+
+            <div class="category-title reveal">
+
+                <div class="category-index">
+                    02
+                </div>
+
+                <h3>
+                    Mathematics & Logic
+                </h3>
+
+            </div>
+
+
+            <div class="course-grid">
+
+
+                <div class="glass course-card reveal">
+
+                    <div class="course-number">
+                        06
+                    </div>
+
+                    <div class="course-icon">
+                        ∑
+                    </div>
+
+                    <h4>
+                        Linear Algebra & Calculus
+                    </h4>
+
+                    <p>
+                        Matrices, vectors, calculus
+                        and mathematical foundations.
+                    </p>
+
+                </div>
+
+
+                <div class="glass course-card reveal">
+
+                    <div class="course-number">
+                        07
+                    </div>
+
+                    <div class="course-icon">
+                        ∞
+                    </div>
+
+                    <h4>
+                        Differential Equations & Vector Calculus
+                    </h4>
+
+                    <p>
+                        Differential equations,
+                        vectors and multivariable concepts.
+                    </p>
+
+                </div>
+
+
+                <div class="glass course-card reveal">
+
+                    <div class="course-number">
+                        08
+                    </div>
+
+                    <div class="course-icon">
+                        ∴
+                    </div>
+
+                    <h4>
+                        Discrete Mathematics & Graph Theory
+                    </h4>
+
+                    <p>
+                        Discrete structures, graphs,
+                        logic and mathematical reasoning.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================================================
+             COMPUTER SYSTEMS
+        ====================================================== -->
+
+        <div class="course-category">
+
+
+            <div class="category-title reveal">
+
+                <div class="category-index">
+                    03
+                </div>
+
+                <h3>
+                    Computer Systems
+                </h3>
+
+            </div>
+
+
+            <div class="course-grid">
+
+
+                <div class="glass course-card reveal">
+
+                    <div class="course-number">
+                        09
+                    </div>
+
+                    <div class="course-icon">
+                        ◈
+                    </div>
+
+                    <h4>
+                        Digital Logics
+                    </h4>
+
+                    <p>
+                        Digital logic, gates,
+                        Boolean concepts and
+                        digital systems.
+                    </p>
+
+                </div>
+
+
+                <div class="glass course-card reveal">
+
+                    <div class="course-number">
+                        10
+                    </div>
+
+                    <div class="course-icon">
+                        CPU
+                    </div>
+
+                    <h4>
+                        Computer Organisation
+                    </h4>
+
+                    <p>
+                        Computer architecture,
+                        organisation and system
+                        fundamentals.
+                    </p>
+
+                </div>
+
+
+                <div class="glass course-card reveal">
+
+                    <div class="course-number">
+                        11
+                    </div>
+
+                    <div class="course-icon">
+                        IoT
+                    </div>
+
+                    <h4>
+                        Internet of Things
+                    </h4>
+
+                    <p>
+                        Connected systems, sensors,
+                        devices and IoT fundamentals.
+                    </p>
+
+                </div>
+
+
+                <div class="glass course-card reveal">
+
+                    <div class="course-number">
+                        12
+                    </div>
+
+                    <div class="course-icon">
+                        ⚡
+                    </div>
+
+                    <h4>
+                        Basic Electrical & Electronics
+                    </h4>
+
+                    <p>
+                        Electrical circuits,
+                        electronics and engineering
+                        fundamentals.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================================================
+             ENGINEERING
+        ====================================================== -->
+
+        <div class="course-category">
+
+
+            <div class="category-title reveal">
+
+                <div class="category-index">
+                    04
+                </div>
+
+                <h3>
+                    Engineering Foundation
+                </h3>
+
+            </div>
+
+
+            <div class="course-grid">
+
+
+                <div class="glass course-card reveal">
+
+                    <div class="course-number">
+                        13
+                    </div>
+
+                    <div class="course-icon">
+                        ⚛
+                    </div>
+
+                    <h4>
+                        Engineering Physics
+                    </h4>
+
+                    <p>
+                        Physics concepts supporting
+                        engineering applications.
+                    </p>
+
+                </div>
+
+
+                <div class="glass course-card reveal">
+
+                    <div class="course-number">
+                        14
+                    </div>
+
+                    <div class="course-icon">
+                        ⚗
+                    </div>
+
+                    <h4>
+                        Chemistry
+                    </h4>
+
+                    <p>
+                        Engineering chemistry and
+                        scientific fundamentals.
+                    </p>
+
+                </div>
+
+
+                <div class="glass course-card reveal">
+
+                    <div class="course-number">
+                        15
+                    </div>
+
+                    <div class="course-icon">
+                        📐
+                    </div>
+
+                    <h4>
+                        Engineering Graphics
+                    </h4>
+
+                    <p>
+                        Engineering drawing,
+                        visualisation and graphics.
+                    </p>
+
+                </div>
+
+
+                <div class="glass course-card reveal">
+
+                    <div class="course-number">
+                        16
+                    </div>
+
+                    <div class="course-icon">
+                        ⚙
+                    </div>
+
+                    <h4>
+                        Basic Civil & Mechanical Engineering
+                    </h4>
+
+                    <p>
+                        Introduction to civil and
+                        mechanical engineering concepts.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================================================
+             COMMUNICATION & VALUES
+        ====================================================== -->
+
+        <div class="course-category">
+
+
+            <div class="category-title reveal">
+
+                <div class="category-index">
+                    05
+                </div>
+
+                <h3>
+                    Communication, Values & Environment
+                </h3>
+
+            </div>
+
+
+            <div class="course-grid">
+
+
+                <div class="glass course-card reveal">
+
+                    <div class="course-number">
+                        17
+                    </div>
+
+                    <div class="course-icon">
+                        ✍
+                    </div>
+
+                    <h4>
+                        Communicative English
+                    </h4>
+
+                    <p>
+                        Professional communication,
+                        language skills and expression.
+                    </p>
+
+                </div>
+
+
+                <div class="glass course-card reveal">
+
+                    <div class="course-number">
+                        18
+                    </div>
+
+                    <div class="course-icon">
+                        UHV
+                    </div>
+
+                    <h4>
+                        Universal Human Values
+                    </h4>
+
+                    <p>
+                        Human values, ethical thinking,
+                        harmony and responsible living.
+                    </p>
+
+                </div>
+
+
+                <div class="glass course-card reveal">
+
+                    <div class="course-number">
+                        19
+                    </div>
+
+                    <div class="course-icon">
+                        🌱
+                    </div>
+
+                    <h4>
+                        Environmental Science
+                    </h4>
+
+                    <p>
+                        Environmental awareness,
+                        sustainability and ecological
+                        responsibility.
+                    </p>
+
+                </div>
+
+
+                <div class="glass course-card reveal">
+
+                    <div class="course-number">
+                        20
+                    </div>
+
+                    <div class="course-icon">
+                        🤝
+                    </div>
+
+                    <h4>
+                        Health, Wellness & Sports
+                    </h4>
+
+                    <p>
+                        Health awareness, wellness,
+                        fitness and personal development.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================================================
+             LABS & WORKSHOPS
+        ====================================================== -->
+
+        <div class="course-category">
+
+
+            <div class="category-title reveal">
+
+                <div class="category-index">
+                    06
+                </div>
+
+                <h3>
+                    Labs & Practical Learning
+                </h3>
+
+            </div>
+
+
+            <div class="course-grid">
+
+
+                <div class="glass course-card reveal">
+
+                    <div class="course-number">
+                        21
+                    </div>
+
+                    <div class="course-icon">
+                        C
+                    </div>
+
+                    <h4>
+                        Computer Programming Lab
+                    </h4>
+
+                    <p>
+                        Practical programming and
+                        computational problem solving.
+                    </p>
+
+                </div>
+
+
+                <div class="glass course-card reveal">
+
+                    <div class="course-number">
+                        22
+                    </div>
+
+                    <div class="course-icon">
+                        DS
+                    </div>
+
+                    <h4>
+                        Data Structures through C Lab
+                    </h4>
+
+                    <p>
+                        Practical implementation of
+                        data structures and algorithms.
+                    </p>
+
+                </div>
+
+
+                <div class="glass course-card reveal">
+
+                    <div class="course-number">
+                        23
+                    </div>
+
+                    <div class="course-icon">
+                        ⚡
+                    </div>
+
+                    <h4>
+                        Electrical & Electronics Workshop
+                    </h4>
+
+                    <p>
+                        Practical exposure to electrical
+                        and electronic systems.
+                    </p>
+
+                </div>
+
+
+                <div class="glass course-card reveal">
+
+                    <div class="course-number">
+                        24
+                    </div>
+
+                    <div class="course-icon">
+                        🛠
+                    </div>
+
+                    <h4>
+                        Engineering Workshop
+                    </h4>
+
+                    <p>
+                        Hands-on engineering and
+                        practical workshop experience.
+                    </p>
+
+                </div>
+
+
+                <div class="glass course-card reveal">
+
+                    <div class="course-number">
+                        25
+                    </div>
+
+                    <div class="course-icon">
+                        🌐
+                    </div>
+
+                    <h4>
+                        IT Workshop
+                    </h4>
+
+                    <p>
+                        Practical exposure to information
+                        technology tools and systems.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     EDUCATION
+========================================================= -->
+
+<section id="education">
+
+    <div class="container">
+
+
+        <div class="section-header reveal">
+
+            <div class="section-number">
+                03 — Education
+            </div>
+
+            <h2 class="section-title">
+                My journey.
+            </h2>
+
+        </div>
+
+
+        <div class="education-wrapper">
+
+
+            <div class="education-item reveal">
+
+                <div class="education-year">
+                    2025 — PRESENT
+                </div>
+
+                <h3>
+                    Ramchandra Engineering College
+                </h3>
+
+                <p>
+                    B.Tech · Internet of Things (IoT)
+                    · Second Year
+                </p>
+
+            </div>
+
+
+            <div class="education-item reveal">
+
+                <div class="education-year">
+                    ACADEMIC FOCUS
+                </div>
+
+                <h3>
+                    IoT × Programming × Algorithms
+                </h3>
+
+                <p>
+                    Internet of Things · Java · C ·
+                    Data Structures · Advanced Data Structures ·
+                    Algorithm Analysis · Digital Logic ·
+                    Computer Organisation
+                </p>
+
+            </div>
+
+
+            <div class="education-item reveal">
+
+                <div class="education-year">
+                    CURRENT
+                </div>
+
+                <h3>
+                    Learning & Building
+                </h3>
+
+                <p>
+                    Developing programming skills,
+                    understanding connected systems and
+                    strengthening foundations in algorithms,
+                    computer systems and IoT.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     PROJECTS
+========================================================= -->
+
+<section id="projects">
+
+    <div class="container">
+
+
+        <div class="section-header reveal">
+
+            <div class="section-number">
+                04 — Projects
+            </div>
+
+            <h2 class="section-title">
+                Things I'm building.
+            </h2>
+
+            <p class="section-description">
+
+                Projects can be added here as they are
+                completed during the B.Tech journey.
+
+            </p>
+
+        </div>
+
+
+        <div class="projects-grid">
+
+
+            <!-- PROJECT 1 -->
+
+            <div class="glass project reveal">
+
+                <div class="project-number">
+                    PROJECT / 01
+                </div>
+
+                <h3>
+                    IoT Project
+                </h3>
+
+                <p>
+                    Add an IoT project here.
+                    Describe the sensors, hardware,
+                    software and real-world problem
+                    being solved.
+                </p>
+
+                <div class="project-tech">
+
+                    <span>
+                        IoT
+                    </span>
+
+                    <span>
+                        Sensors
+                    </span>
+
+                    <span>
+                        Embedded
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROJECT 2 -->
+
+            <div class="glass project reveal">
+
+                <div class="project-number">
+                    PROJECT / 02
+                </div>
+
+                <h3>
+                    Java Application
+                </h3>
+
+                <p>
+                    Add a Java project here and describe
+                    the application, features and
+                    programming concepts used.
+                </p>
+
+                <div class="project-tech">
+
+                    <span>
+                        Java
+                    </span>
+
+                    <span>
+                        OOP
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROJECT 3 -->
+
+            <div class="glass project reveal">
+
+                <div class="project-number">
+                    PROJECT / 03
+                </div>
+
+                <h3>
+                    Data Structures Project
+                </h3>
+
+                <p>
+                    Add a project demonstrating
+                    data structures, algorithms and
+                    computational problem solving.
+                </p>
+
+                <div class="project-tech">
+
+                    <span>
+                        C
+                    </span>
+
+                    <span>
+                        DSA
+                    </span>
+
+                    <span>
+                        Algorithms
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROJECT 4 -->
+
+            <div class="glass project reveal">
+
+                <div class="project-number">
+                    PROJECT / 04
+                </div>
+
+                <h3>
+                    Smart System
+                </h3>
+
+                <p>
+                    Add a smart connected system or
+                    automation project demonstrating
+                    IoT concepts.
+                </p>
+
+                <div class="project-tech">
+
+                    <span>
+                        IoT
+                    </span>
+
+                    <span>
+                        Automation
+                    </span>
+
+                    <span>
+                        Technology
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section id="contact">
+
+    <div class="container">
+
+
+        <div class="glass contact reveal">
+
+
+            <div class="contact-content">
+
+
+                <div class="section-number">
+                    05 — Contact
+                </div>
+
+
+                <h2>
+
+                    Let's build
+                    <br>
+
+                    <span class="gradient-text">
+                        something.
+                    </span>
+
+                </h2>
+
+
+                <p>
+
+                    Have a project, idea or opportunity?
+                    Feel free to connect.
+
+                </p>
+
+
+                <a
+                    href="mailto:akshaya8.marri@gmail.com"
+                    class="button button-primary">
+
+                    Send me an email →
+
+                </a>
+
+
+                <a
+                    href="mailto:akshaya8.marri@gmail.com"
+                    class="email">
+
+                    akshaya8.marri@gmail.com
+
+                </a>
+
+
+                <!-- SOCIAL LINKS -->
+
+                <div class="social-links">
+
+
+                    <!-- INSTAGRAM
+                         Replace # with actual Instagram URL -->
+
+                    <a
+                        href="#"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="social"
+                        title="Instagram">
+
+                        IG
+
+                    </a>
+
+
+                    <!-- LINKEDIN
+                         Replace # with actual LinkedIn URL -->
+
+                    <a
+                        href="#"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="social"
+                        title="LinkedIn">
+
+                        IN
+
+                    </a>
+
+
+                    <!-- EMAIL -->
+
+                    <a
+                        href="mailto:akshaya8.marri@gmail.com"
+                        class="social"
+                        title="Email">
+
+                        @
+
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-content">
+
+            <div>
+                © 2026 Akshaya Marri
+            </div>
+
+            <div>
+                IoT × Code × Innovation
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<script>
+
+/* =========================================================
+   THREE.JS
+========================================================= */
+
+const scene =
+    new THREE.Scene();
+
+
+const camera =
+    new THREE.PerspectiveCamera(
+        75,
+        window.innerWidth /
+        window.innerHeight,
+        0.1,
+        1000
+    );
+
+
+camera.position.z = 5;
+
+
+const renderer =
+    new THREE.WebGLRenderer({
+
+        alpha: true,
+
+        antialias: true
+
+    });
+
+
+renderer.setPixelRatio(
+    Math.min(
+        window.devicePixelRatio,
+        2
+    )
+);
+
+
+renderer.setSize(
+    window.innerWidth,
+    window.innerHeight
+);
+
+
+document
+    .getElementById("three-container")
+    .appendChild(
+        renderer.domElement
+    );
+
+
+/* =========================================================
+   PARTICLES
+========================================================= */
+
+const particleGeometry =
+    new THREE.BufferGeometry();
+
+
+const particleCount = 1100;
+
+
+const particlePositions =
+    new Float32Array(
+        particleCount * 3
+    );
+
+
+for (
+    let i = 0;
+    i < particleCount * 3;
+    i++
+) {
+
+    particlePositions[i] =
+        (Math.random() - 0.5) * 20;
+
+}
+
+
+particleGeometry.setAttribute(
+
+    "position",
+
+    new THREE.BufferAttribute(
+        particlePositions,
+        3
+    )
+
+);
+
+
+const particleMaterial =
+    new THREE.PointsMaterial({
+
+        color: 0x8b5cf6,
+
+        size: 0.025,
+
+        transparent: true,
+
+        opacity: 0.65
+
+    });
+
+
+const particles =
+    new THREE.Points(
+        particleGeometry,
+        particleMaterial
+    );
+
+
+scene.add(particles);
+
+
+/* =========================================================
+   WIREFRAME SPHERE
+========================================================= */
+
+const sphereGeometry =
+    new THREE.IcosahedronGeometry(
+        1.7,
+        2
+    );
+
+
+const sphereMaterial =
+    new THREE.MeshBasicMaterial({
+
+        color: 0x8b5cf6,
+
+        wireframe: true,
+
+        transparent: true,
+
+        opacity: 0.12
+
+    });
+
+
+const sphere =
+    new THREE.Mesh(
+        sphereGeometry,
+        sphereMaterial
+    );
+
+
+sphere.position.set(
+    3,
+    0,
+    0
+);
+
+
+scene.add(sphere);
+
+
+/* =========================================================
+   RING
+========================================================= */
+
+const ringGeometry =
+    new THREE.TorusGeometry(
+        2.2,
+        0.015,
+        16,
+        100
+    );
+
+
+const ringMaterial =
+    new THREE.MeshBasicMaterial({
+
+        color: 0x06b6d4,
+
+        transparent: true,
+
+        opacity: 0.35
+
+    });
+
+
+const ring =
+    new THREE.Mesh(
+        ringGeometry,
+        ringMaterial
+    );
+
+
+ring.position.set(
+    3,
+    0,
+    0
+);
+
+
+ring.rotation.x =
+    Math.PI / 2;
+
+
+scene.add(ring);
+
+
+/* =========================================================
+   FLOATING OBJECTS
+========================================================= */
+
+const floatingObjects = [];
+
+
+for (
+    let i = 0;
+    i < 20;
+    i++
+) {
+
+    const geometry =
+        new THREE.TetrahedronGeometry(
+            Math.random() * 0.08 + 0.025
+        );
+
+
+    const colors = [
+
+        0x8b5cf6,
+        0xec4899,
+        0x06b6d4,
+        0x3b82f6
+
+    ];
+
+
+    const material =
+        new THREE.MeshBasicMaterial({
+
+            color:
+                colors[
+                    Math.floor(
+                        Math.random() *
+                        colors.length
+                    )
+                ],
+
+            wireframe: true,
+
+            transparent: true,
+
+            opacity: 0.5
+
+        });
+
+
+    const object =
+        new THREE.Mesh(
+            geometry,
+            material
+        );
+
+
+    object.position.set(
+
+        (Math.random() - 0.5) * 14,
+
+        (Math.random() - 0.5) * 9,
+
+        (Math.random() - 0.5) * 6
+
+    );
+
+
+    scene.add(object);
+
+    floatingObjects.push(object);
+
+}
+
+
+/* =========================================================
+   MOUSE
+========================================================= */
+
+let mouseX = 0;
+
+let mouseY = 0;
+
+
+document.addEventListener(
+    "mousemove",
+    event => {
+
+        mouseX =
+            (
+                event.clientX /
+                window.innerWidth
+            ) - 0.5;
+
+
+        mouseY =
+            (
+                event.clientY /
+                window.innerHeight
+            ) - 0.5;
+
+    }
+);
+
+
+/* =========================================================
+   ANIMATION
+========================================================= */
+
+const clock =
+    new THREE.Clock();
+
+
+function animate() {
+
+    requestAnimationFrame(animate);
+
+
+    const time =
+        clock.getElapsedTime();
+
+
+    particles.rotation.y =
+        time * 0.012;
+
+
+    particles.rotation.x =
+        time * 0.004;
+
+
+    sphere.rotation.x =
+        time * 0.18;
+
+
+    sphere.rotation.y =
+        time * 0.25;
+
+
+    ring.rotation.z =
+        time * 0.18;
+
+
+    ring.rotation.y =
+        time * 0.08;
+
+
+    sphere.position.x =
+        3 +
+        mouseX * 0.4;
+
+
+    sphere.position.y =
+        Math.sin(
+            time * 0.7
+        ) * 0.12;
+
+
+    floatingObjects.forEach(
+        (object,index) => {
+
+            object.rotation.x +=
+                0.002;
+
+            object.rotation.y +=
+                0.003;
+
+        }
+    );
+
+
+    camera.position.x +=
+        (
+            mouseX * 0.2 -
+            camera.position.x
+        ) * 0.02;
+
+
+    camera.position.y +=
+        (
+            -mouseY * 0.2 -
+            camera.position.y
+        ) * 0.02;
+
+
+    camera.lookAt(
+        scene.position
+    );
+
+
+    renderer.render(
+        scene,
+        camera
+    );
+
+}
+
+
+animate();
+
+
+/* =========================================================
+   RESIZE
+========================================================= */
+
+window.addEventListener(
+    "resize",
+    () => {
+
+        camera.aspect =
+            window.innerWidth /
+            window.innerHeight;
+
+
+        camera.updateProjectionMatrix();
+
+
+        renderer.setSize(
+            window.innerWidth,
+            window.innerHeight
+        );
+
+    }
+);
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+const revealElements =
+    document.querySelectorAll(
+        ".reveal"
+    );
+
+
+const observer =
+    new IntersectionObserver(
+
+        entries => {
+
+            entries.forEach(
+                entry => {
+
+                    if (
+                        entry.isIntersecting
+                    ) {
+
+                        entry.target
+                            .classList
+                            .add("active");
+
+                    }
+
+                }
+            );
+
+        },
+
+        {
+            threshold: 0.12
+        }
+
+    );
+
+
+revealElements.forEach(
+    element => {
+
+        observer.observe(element);
+
+    }
+);
+
+
+/* =========================================================
+   COURSE CARD 3D TILT
+========================================================= */
+
+document
+    .querySelectorAll(".course-card")
+    .forEach(card => {
+
+        card.addEventListener(
+            "mousemove",
+            event => {
+
+                const rect =
+                    card.getBoundingClientRect();
+
+
+                const x =
+                    event.clientX -
+                    rect.left;
+
+
+                const y =
+                    event.clientY -
+                    rect.top;
+
+
+                const rotateY =
+                    (
+                        x /
+                        rect.width -
+                        0.5
+                    ) * 8;
+
+
+                const rotateX =
+                    (
+                        y /
+                        rect.height -
+                        0.5
+                    ) * -8;
+
+
+                card.style.transform =
+                    `
+                    perspective(700px)
+                    rotateX(${rotateX}deg)
+                    rotateY(${rotateY}deg)
+                    translateY(-8px)
+                    `;
+
+            }
+        );
+
+
+        card.addEventListener(
+            "mouseleave",
+            () => {
+
+                card.style.transform = "";
+
+            }
+        );
+
+    });
+
+
+/* =========================================================
+   PROJECT CARD 3D TILT
+========================================================= */
+
+document
+    .querySelectorAll(".project")
+    .forEach(card => {
+
+        card.addEventListener(
+            "mousemove",
+            event => {
+
+                const rect =
+                    card.getBoundingClientRect();
+
+
+                const x =
+                    event.clientX -
+                    rect.left;
+
+
+                const y =
+                    event.clientY -
+                    rect.top;
+
+
+                const rotateY =
+                    (
+                        x /
+                        rect.width -
+                        0.5
+                    ) * 6;
+
+
+                const rotateX =
+                    (
+                        y /
+                        rect.height -
+                        0.5
+                    ) * -6;
+
+
+                card.style.transform =
+                    `
+                    perspective(800px)
+                    rotateX(${rotateX}deg)
+                    rotateY(${rotateY}deg)
+                    translateY(-10px)
+                    `;
+
+            }
+        );
+
+
+        card.addEventListener(
+            "mouseleave",
+            () => {
+
+                card.style.transform = "";
+
+            }
+        );
+
+    });
+
+</script>
+
+</body>
+
+</html>

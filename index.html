@@ -9,7 +9,7 @@
 <title>Akshaya Marri | IoT Portfolio</title>
 
 <meta name="description"
-content="Akshaya Marri - B.Tech Internet of Things student at Ramchandra Engineering College.">
+content="Akshaya Marri - B.Tech Internet of Things student at Ramachandra Engineering College.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +18,6 @@ content="Akshaya Marri - B.Tech Internet of Things student at Ramchandra Enginee
 rel="stylesheet">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-
 
 <style>
 
@@ -69,7 +68,6 @@ a {
     --pink: #ec4899;
     --cyan: #06b6d4;
     --blue: #3b82f6;
-    --green: #22c55e;
 
     --white: #ffffff;
     --muted: #9696aa;
@@ -84,11 +82,8 @@ a {
 #three-container {
 
     position: fixed;
-
     inset: 0;
-
     z-index: -5;
-
     pointer-events: none;
 
 }
@@ -97,34 +92,30 @@ a {
     display: block;
 }
 
-
 .background-gradient {
 
     position: fixed;
-
     inset: 0;
-
     z-index: -4;
-
     pointer-events: none;
 
     background:
 
         radial-gradient(
-            circle at 12% 18%,
-            rgba(139,92,246,0.20),
+            circle at 15% 20%,
+            rgba(139,92,246,0.18),
             transparent 30%
         ),
 
         radial-gradient(
-            circle at 88% 25%,
-            rgba(6,182,212,0.14),
+            circle at 85% 25%,
+            rgba(6,182,212,0.13),
             transparent 28%
         ),
 
         radial-gradient(
-            circle at 75% 82%,
-            rgba(236,72,153,0.13),
+            circle at 70% 80%,
+            rgba(236,72,153,0.12),
             transparent 30%
         );
 
@@ -162,7 +153,7 @@ a {
         rgba(255,255,255,0.10);
 
     background:
-        rgba(8,8,20,0.68);
+        rgba(8,8,20,0.65);
 
     backdrop-filter: blur(22px);
 
@@ -176,7 +167,6 @@ a {
 
 }
 
-
 .logo {
 
     font-family: "Space Grotesk";
@@ -188,7 +178,6 @@ a {
     letter-spacing: -1px;
 
 }
-
 
 .logo span {
 
@@ -206,7 +195,6 @@ a {
 
 }
 
-
 .nav-links {
 
     display: flex;
@@ -219,7 +207,6 @@ a {
 
 }
 
-
 .nav-links a {
 
     font-size: 13px;
@@ -229,7 +216,6 @@ a {
     transition: 0.3s;
 
 }
-
 
 .nav-links a:hover {
     color: white;
@@ -254,21 +240,19 @@ a {
 
 }
 
-
 .hero-grid {
 
     display: grid;
 
     grid-template-columns:
-        1.05fr
-        0.95fr;
+        1.1fr
+        0.9fr;
 
     align-items: center;
 
     gap: 40px;
 
 }
-
 
 .availability {
 
@@ -297,11 +281,9 @@ a {
 
 }
 
-
 .live-dot {
 
     width: 7px;
-
     height: 7px;
 
     border-radius: 50%;
@@ -313,13 +295,12 @@ a {
 
 }
 
-
 .hero h1 {
 
     font-family: "Space Grotesk";
 
     font-size:
-        clamp(50px, 7.5vw, 92px);
+        clamp(55px, 8vw, 100px);
 
     line-height: 0.92;
 
@@ -328,7 +309,6 @@ a {
     margin-bottom: 28px;
 
 }
-
 
 .gradient-text {
 
@@ -352,7 +332,6 @@ a {
 
 }
 
-
 @keyframes gradientAnimation {
 
     0% {
@@ -369,10 +348,9 @@ a {
 
 }
 
-
 .hero-description {
 
-    max-width: 620px;
+    max-width: 610px;
 
     color: var(--muted);
 
@@ -384,11 +362,9 @@ a {
 
 }
 
-
 .hero-description strong {
     color: white;
 }
-
 
 .hero-buttons {
 
@@ -399,7 +375,6 @@ a {
     flex-wrap: wrap;
 
 }
-
 
 .button {
 
@@ -421,7 +396,6 @@ a {
 
 }
 
-
 .button-primary {
 
     background:
@@ -437,7 +411,6 @@ a {
 
 }
 
-
 .button-primary:hover {
 
     transform:
@@ -449,7 +422,6 @@ a {
 
 }
 
-
 .button-outline {
 
     border:
@@ -460,7 +432,6 @@ a {
         rgba(255,255,255,0.04);
 
 }
-
 
 .button-outline:hover {
 
@@ -490,7 +461,6 @@ a {
     justify-content: center;
 
 }
-
 
 .orb {
 
@@ -526,7 +496,6 @@ a {
 
 }
 
-
 .orb::before {
 
     content: "";
@@ -539,14 +508,13 @@ a {
 
     border:
         1px solid
-        rgba(6,182,212,0.45);
+        rgba(6,182,212,0.40);
 
     transform:
         rotateX(65deg)
         rotateZ(15deg);
 
 }
-
 
 .orb::after {
 
@@ -560,14 +528,13 @@ a {
 
     border:
         1px solid
-        rgba(236,72,153,0.30);
+        rgba(236,72,153,0.25);
 
     transform:
         rotateY(65deg)
         rotateZ(-20deg);
 
 }
-
 
 @keyframes orbFloat {
 
@@ -594,12 +561,12 @@ a {
 
     position: absolute;
 
-    padding: 10px 14px;
+    padding: 9px 13px;
 
     border-radius: 10px;
 
     background:
-        rgba(10,10,25,0.70);
+        rgba(10,10,25,0.65);
 
     border:
         1px solid
@@ -614,43 +581,36 @@ a {
 
 }
 
-
 .tag-iot {
 
     top: 12%;
-
     right: 10%;
 
     color: #67e8f9;
 
 }
 
-
 .tag-java {
 
     bottom: 18%;
-
     right: 5%;
-
-    color: #c4b5fd;
 
     animation-delay: 1s;
 
+    color: #c4b5fd;
+
 }
 
+.tag-math {
 
-.tag-data {
-
-    bottom: 10%;
-
+    bottom: 12%;
     left: 8%;
-
-    color: #f9a8d4;
 
     animation-delay: 2s;
 
-}
+    color: #f9a8d4;
 
+}
 
 @keyframes floatingTag {
 
@@ -675,11 +635,9 @@ section {
     padding: 120px 0;
 }
 
-
 .section-header {
     margin-bottom: 55px;
 }
-
 
 .section-number {
 
@@ -695,7 +653,6 @@ section {
 
 }
 
-
 .section-title {
 
     font-family: "Space Grotesk";
@@ -707,10 +664,9 @@ section {
 
 }
 
-
 .section-description {
 
-    max-width: 700px;
+    max-width: 650px;
 
     margin-top: 15px;
 
@@ -768,11 +724,9 @@ section {
 
 }
 
-
 .about-card {
     padding: 38px;
 }
-
 
 .about-card p {
 
@@ -784,11 +738,9 @@ section {
 
 }
 
-
 .about-card strong {
     color: white;
 }
-
 
 .stats-grid {
 
@@ -801,15 +753,17 @@ section {
 
 }
 
-
 .stat {
 
     padding: 25px;
 
     min-height: 145px;
 
-}
+    position: relative;
 
+    overflow: hidden;
+
+}
 
 .stat-number {
 
@@ -821,7 +775,6 @@ section {
 
 }
 
-
 .stat-label {
 
     color: #77778b;
@@ -830,43 +783,46 @@ section {
 
 }
 
-
 .stat-purple {
+
     box-shadow:
         inset 0 0 60px
         rgba(139,92,246,0.07);
+
 }
 
-
 .stat-cyan {
+
     box-shadow:
         inset 0 0 60px
         rgba(6,182,212,0.07);
+
 }
 
-
 .stat-pink {
+
     box-shadow:
         inset 0 0 60px
         rgba(236,72,153,0.07);
+
 }
 
-
 .stat-blue {
+
     box-shadow:
         inset 0 0 60px
         rgba(59,130,246,0.07);
+
 }
 
 
 /* =========================================================
-   COURSE CATEGORIES
+   COURSES
 ========================================================= */
 
 .course-category {
     margin-bottom: 65px;
 }
-
 
 .category-title {
 
@@ -880,12 +836,10 @@ section {
 
 }
 
-
 .category-index {
 
-    width: 38px;
-
-    height: 38px;
+    width: 36px;
+    height: 36px;
 
     border-radius: 50%;
 
@@ -908,7 +862,6 @@ section {
 
 }
 
-
 .category-title h3 {
 
     font-family: "Space Grotesk";
@@ -916,7 +869,6 @@ section {
     font-size: 23px;
 
 }
-
 
 .course-grid {
 
@@ -929,12 +881,11 @@ section {
 
 }
 
-
 .course-card {
 
     padding: 26px;
 
-    min-height: 200px;
+    min-height: 195px;
 
     position: relative;
 
@@ -946,14 +897,15 @@ section {
 
 }
 
-
 .course-card:hover {
+
+    transform:
+        translateY(-8px);
 
     border-color:
         rgba(139,92,246,0.35);
 
 }
-
 
 .course-number {
 
@@ -963,12 +915,10 @@ section {
 
 }
 
-
 .course-icon {
 
-    width: 46px;
-
-    height: 46px;
+    width: 45px;
+    height: 45px;
 
     border-radius: 13px;
 
@@ -978,9 +928,9 @@ section {
 
     justify-content: center;
 
-    margin: 18px 0;
+    margin: 20px 0;
 
-    font-size: 18px;
+    font-size: 19px;
 
     background:
         linear-gradient(
@@ -991,19 +941,17 @@ section {
 
 }
 
-
 .course-card h4 {
 
     font-family: "Space Grotesk";
 
-    font-size: 16px;
+    font-size: 17px;
 
-    line-height: 1.25;
+    line-height: 1.2;
 
     margin-bottom: 9px;
 
 }
-
 
 .course-card p {
 
@@ -1032,7 +980,6 @@ section {
 
 }
 
-
 .education-item {
 
     position: relative;
@@ -1041,11 +988,9 @@ section {
 
 }
 
-
 .education-item:last-child {
     padding-bottom: 0;
 }
-
 
 .education-item::before {
 
@@ -1058,7 +1003,6 @@ section {
     top: 2px;
 
     width: 11px;
-
     height: 11px;
 
     border-radius: 50%;
@@ -1076,7 +1020,6 @@ section {
 
 }
 
-
 .education-year {
 
     color: #8b8ba0;
@@ -1089,7 +1032,6 @@ section {
 
 }
 
-
 .education-item h3 {
 
     font-family: "Space Grotesk";
@@ -1099,7 +1041,6 @@ section {
     margin-bottom: 8px;
 
 }
-
 
 .education-item p {
 
@@ -1127,7 +1068,6 @@ section {
 
 }
 
-
 .project {
 
     min-height: 330px;
@@ -1144,14 +1084,12 @@ section {
 
 }
 
-
 .project:hover {
 
     border-color:
         rgba(255,255,255,0.22);
 
 }
-
 
 .project::before {
 
@@ -1160,13 +1098,11 @@ section {
     position: absolute;
 
     width: 180px;
-
     height: 180px;
 
     border-radius: 50%;
 
     right: -70px;
-
     top: -70px;
 
     background:
@@ -1180,7 +1116,6 @@ section {
 
 }
 
-
 .project-number {
 
     font-size: 10px;
@@ -1188,7 +1123,6 @@ section {
     color: #68687d;
 
 }
-
 
 .project h3 {
 
@@ -1202,7 +1136,6 @@ section {
 
 }
 
-
 .project p {
 
     max-width: 450px;
@@ -1215,13 +1148,11 @@ section {
 
 }
 
-
 .project-tech {
 
     position: absolute;
 
     bottom: 25px;
-
     left: 30px;
 
     display: flex;
@@ -1231,7 +1162,6 @@ section {
     flex-wrap: wrap;
 
 }
-
 
 .project-tech span {
 
@@ -1269,7 +1199,6 @@ section {
 
 }
 
-
 .contact::before {
 
     content: "";
@@ -1277,7 +1206,6 @@ section {
     position: absolute;
 
     width: 500px;
-
     height: 500px;
 
     border-radius: 50%;
@@ -1290,14 +1218,12 @@ section {
         );
 
     left: 50%;
-
     top: 50%;
 
     transform:
         translate(-50%,-50%);
 
 }
-
 
 .contact-content {
 
@@ -1306,7 +1232,6 @@ section {
     z-index: 2;
 
 }
-
 
 .contact h2 {
 
@@ -1323,7 +1248,6 @@ section {
 
 }
 
-
 .contact p {
 
     color: #77778b;
@@ -1333,7 +1257,6 @@ section {
     margin-bottom: 30px;
 
 }
-
 
 .email {
 
@@ -1372,11 +1295,9 @@ section {
 
 }
 
-
 .social {
 
     width: 46px;
-
     height: 46px;
 
     border-radius: 13px;
@@ -1403,7 +1324,6 @@ section {
     transition: .3s;
 
 }
-
 
 .social:hover {
 
@@ -1440,7 +1360,6 @@ footer {
 
 }
 
-
 .footer-content {
 
     display: flex;
@@ -1453,7 +1372,7 @@ footer {
 
 
 /* =========================================================
-   REVEAL ANIMATION
+   REVEAL
 ========================================================= */
 
 .reveal {
@@ -1468,7 +1387,6 @@ footer {
         transform .8s ease;
 
 }
-
 
 .reveal.active {
 
@@ -1501,7 +1419,6 @@ footer {
 
 }
 
-
 @media(max-width:800px) {
 
     .nav-links {
@@ -1525,7 +1442,6 @@ footer {
     }
 
 }
-
 
 @media(max-width:600px) {
 
@@ -1574,9 +1490,8 @@ footer {
 <div class="background-gradient"></div>
 
 
-
 <!-- =========================================================
-     NAVIGATION
+     NAVBAR
 ========================================================= -->
 
 <nav class="navbar">
@@ -1612,7 +1527,6 @@ footer {
 </nav>
 
 
-
 <!-- =========================================================
      HERO
 ========================================================= -->
@@ -1625,7 +1539,6 @@ footer {
 
 
             <div class="hero-content reveal">
-
 
                 <div class="availability">
 
@@ -1651,15 +1564,15 @@ footer {
 
                 <p class="hero-description">
 
-                    I'm a second-year
-                    <strong>B.Tech Internet of Things</strong>
-                    student at
-                    <strong>Ramchandra Engineering College</strong>.
+                    I'm a second-year student at
+                    <strong>Ramachandra Engineering College</strong>,
+                    pursuing B.Tech in
+                    <strong>Internet of Things (IoT)</strong>.
 
-                    I'm exploring programming,
+                    I enjoy exploring programming,
                     algorithms, computer systems,
-                    IoT technologies and problem solving
-                    while building my technical foundation.
+                    mathematics and connected
+                    technologies.
 
                 </p>
 
@@ -1667,10 +1580,10 @@ footer {
                 <div class="hero-buttons">
 
                     <a
-                        href="#courses"
+                        href="#projects"
                         class="button button-primary">
 
-                        Explore My Skills →
+                        View My Work →
 
                     </a>
 
@@ -1685,7 +1598,6 @@ footer {
 
                 </div>
 
-
             </div>
 
 
@@ -1695,19 +1607,16 @@ footer {
 
                 <div class="orb"></div>
 
-
                 <div class="floating-tag tag-iot">
                     IoT × EMBEDDED
                 </div>
-
 
                 <div class="floating-tag tag-java">
                     JAVA × DSA
                 </div>
 
-
-                <div class="floating-tag tag-data">
-                    LOGIC × DATA
+                <div class="floating-tag tag-math">
+                    MATH × LOGIC
                 </div>
 
             </div>
@@ -1720,7 +1629,6 @@ footer {
 </section>
 
 
-
 <!-- =========================================================
      ABOUT
 ========================================================= -->
@@ -1728,7 +1636,6 @@ footer {
 <section id="about">
 
     <div class="container">
-
 
         <div class="section-header reveal">
 
@@ -1756,27 +1663,27 @@ footer {
                     <br><br>
 
                     I am currently pursuing my
-                    <strong>second year B.Tech</strong>
-                    in
-                    <strong>Internet of Things (IoT)</strong>
+                    second year in
+                    <strong>B.Tech Internet of Things</strong>
                     at
-                    <strong>Ramchandra Engineering College</strong>.
+                    <strong>Ramachandra Engineering College</strong>.
 
                     <br><br>
 
-                    My academic journey covers
+                    My academic journey combines
                     programming, data structures,
                     algorithms, mathematics,
-                    digital systems, computer
+                    digital logic, computer
                     organisation and IoT.
 
                     <br><br>
 
-                    I am interested in developing
-                    strong technical fundamentals
-                    and learning how software,
-                    hardware and connected systems
-                    work together.
+                    I am continuously developing
+                    my technical skills and exploring
+                    how software, hardware and
+                    connected systems can work
+                    together to solve real-world
+                    problems.
 
                 </p>
 
@@ -1819,7 +1726,7 @@ footer {
                     </div>
 
                     <div class="stat-label">
-                        ACADEMIC SUBJECTS
+                        COURSES
                     </div>
 
                 </div>
@@ -1847,7 +1754,6 @@ footer {
 </section>
 
 
-
 <!-- =========================================================
      COURSES
 ========================================================= -->
@@ -1869,20 +1775,17 @@ footer {
 
             <p class="section-description">
 
-                A multidisciplinary foundation covering
-                programming, algorithms, mathematics,
-                computer systems, IoT and professional
-                development.
+                A multidisciplinary academic foundation
+                covering programming, algorithms,
+                mathematics, computer systems,
+                engineering and IoT.
 
             </p>
 
         </div>
 
 
-
-        <!-- =====================================================
-             PROGRAMMING & ALGORITHMS
-        ====================================================== -->
+        <!-- PROGRAMMING -->
 
         <div class="course-category">
 
@@ -1919,8 +1822,8 @@ footer {
 
                     <p>
                         Programming fundamentals,
-                        variables, functions, arrays
-                        and problem solving.
+                        functions, arrays and
+                        computational problem solving.
                     </p>
 
                 </div>
@@ -1941,9 +1844,9 @@ footer {
                     </h4>
 
                     <p>
-                        Core data structures and
-                        algorithmic problem solving
-                        using C.
+                        Arrays, linked lists, stacks,
+                        queues, trees and sorting
+                        concepts.
                     </p>
 
                 </div>
@@ -1983,12 +1886,13 @@ footer {
                     </div>
 
                     <h4>
-                        Algorithm Analysis
+                        Advanced Data Structures & Algorithm Analysis
                     </h4>
 
                     <p>
                         Algorithm design, complexity
-                        analysis and efficient solutions.
+                        analysis and efficient
+                        problem solving.
                     </p>
 
                 </div>
@@ -2001,7 +1905,7 @@ footer {
                     </div>
 
                     <div class="course-icon">
-                        ☕
+                        J
                     </div>
 
                     <h4>
@@ -2009,8 +1913,9 @@ footer {
                     </h4>
 
                     <p>
-                        Object-oriented programming
-                        and Java programming concepts.
+                        Java programming and
+                        object-oriented programming
+                        concepts.
                     </p>
 
                 </div>
@@ -2021,10 +1926,7 @@ footer {
         </div>
 
 
-
-        <!-- =====================================================
-             MATHEMATICS & LOGIC
-        ====================================================== -->
+        <!-- MATHEMATICS -->
 
         <div class="course-category">
 
@@ -2074,7 +1976,7 @@ footer {
                     </div>
 
                     <div class="course-icon">
-                        ∞
+                        ∇
                     </div>
 
                     <h4>
@@ -2083,7 +1985,7 @@ footer {
 
                     <p>
                         Differential equations,
-                        vectors and multivariable concepts.
+                        vectors and calculus concepts.
                     </p>
 
                 </div>
@@ -2104,8 +2006,9 @@ footer {
                     </h4>
 
                     <p>
-                        Discrete structures, graphs,
-                        logic and mathematical reasoning.
+                        Logic, graphs, discrete
+                        structures and mathematical
+                        reasoning.
                     </p>
 
                 </div>
@@ -2116,10 +2019,7 @@ footer {
         </div>
 
 
-
-        <!-- =====================================================
-             COMPUTER SYSTEMS
-        ====================================================== -->
+        <!-- COMPUTER SYSTEMS -->
 
         <div class="course-category">
 
@@ -2131,7 +2031,7 @@ footer {
                 </div>
 
                 <h3>
-                    Computer Systems
+                    Computer Systems & IoT
                 </h3>
 
             </div>
@@ -2147,17 +2047,17 @@ footer {
                     </div>
 
                     <div class="course-icon">
-                        ◈
+                        IoT
                     </div>
 
                     <h4>
-                        Digital Logics
+                        Internet of Things
                     </h4>
 
                     <p>
-                        Digital logic, gates,
-                        Boolean concepts and
-                        digital systems.
+                        Connected devices, sensors,
+                        communication and IoT
+                        fundamentals.
                     </p>
 
                 </div>
@@ -2167,6 +2067,28 @@ footer {
 
                     <div class="course-number">
                         10
+                    </div>
+
+                    <div class="course-icon">
+                        DL
+                    </div>
+
+                    <h4>
+                        Digital Logics
+                    </h4>
+
+                    <p>
+                        Logic gates, Boolean algebra
+                        and digital systems.
+                    </p>
+
+                </div>
+
+
+                <div class="glass course-card reveal">
+
+                    <div class="course-number">
+                        11
                     </div>
 
                     <div class="course-icon">
@@ -2189,28 +2111,6 @@ footer {
                 <div class="glass course-card reveal">
 
                     <div class="course-number">
-                        11
-                    </div>
-
-                    <div class="course-icon">
-                        IoT
-                    </div>
-
-                    <h4>
-                        Internet of Things
-                    </h4>
-
-                    <p>
-                        Connected systems, sensors,
-                        devices and IoT fundamentals.
-                    </p>
-
-                </div>
-
-
-                <div class="glass course-card reveal">
-
-                    <div class="course-number">
                         12
                     </div>
 
@@ -2219,13 +2119,13 @@ footer {
                     </div>
 
                     <h4>
-                        Basic Electrical & Electronics
+                        Basic Electrical & Electronics Engineering
                     </h4>
 
                     <p>
                         Electrical circuits,
                         electronics and engineering
-                        fundamentals.
+                        principles.
                     </p>
 
                 </div>
@@ -2236,10 +2136,7 @@ footer {
         </div>
 
 
-
-        <!-- =====================================================
-             ENGINEERING
-        ====================================================== -->
+        <!-- ENGINEERING -->
 
         <div class="course-category">
 
@@ -2275,7 +2172,7 @@ footer {
                     </h4>
 
                     <p>
-                        Physics concepts supporting
+                        Physics concepts and
                         engineering applications.
                     </p>
 
@@ -2353,10 +2250,7 @@ footer {
         </div>
 
 
-
-        <!-- =====================================================
-             COMMUNICATION & VALUES
-        ====================================================== -->
+        <!-- COMMUNICATION -->
 
         <div class="course-category">
 
@@ -2392,8 +2286,9 @@ footer {
                     </h4>
 
                     <p>
-                        Professional communication,
-                        language skills and expression.
+                        Communication skills,
+                        professional expression
+                        and language development.
                     </p>
 
                 </div>
@@ -2436,9 +2331,8 @@ footer {
                     </h4>
 
                     <p>
-                        Environmental awareness,
-                        sustainability and ecological
-                        responsibility.
+                        Environment, sustainability
+                        and ecological responsibility.
                     </p>
 
                 </div>
@@ -2451,11 +2345,11 @@ footer {
                     </div>
 
                     <div class="course-icon">
-                        🤝
+                        ♥
                     </div>
 
                     <h4>
-                        Health, Wellness & Sports
+                        Health & Wellness
                     </h4>
 
                     <p>
@@ -2471,10 +2365,7 @@ footer {
         </div>
 
 
-
-        <!-- =====================================================
-             LABS & WORKSHOPS
-        ====================================================== -->
+        <!-- LABS -->
 
         <div class="course-category">
 
@@ -2554,8 +2445,8 @@ footer {
                     </h4>
 
                     <p>
-                        Practical exposure to electrical
-                        and electronic systems.
+                        Practical exposure to
+                        electrical and electronic systems.
                     </p>
 
                 </div>
@@ -2590,7 +2481,7 @@ footer {
                     </div>
 
                     <div class="course-icon">
-                        🌐
+                        IT
                     </div>
 
                     <h4>
@@ -2598,8 +2489,8 @@ footer {
                     </h4>
 
                     <p>
-                        Practical exposure to information
-                        technology tools and systems.
+                        Practical exposure to
+                        information technology tools.
                     </p>
 
                 </div>
@@ -2613,7 +2504,6 @@ footer {
     </div>
 
 </section>
-
 
 
 <!-- =========================================================
@@ -2648,7 +2538,7 @@ footer {
                 </div>
 
                 <h3>
-                    Ramchandra Engineering College
+                    Ramachandra Engineering College
                 </h3>
 
                 <p>
@@ -2666,7 +2556,7 @@ footer {
                 </div>
 
                 <h3>
-                    IoT × Programming × Algorithms
+                    IoT × Code × Systems
                 </h3>
 
                 <p>
@@ -2691,9 +2581,9 @@ footer {
 
                 <p>
                     Developing programming skills,
-                    understanding connected systems and
-                    strengthening foundations in algorithms,
-                    computer systems and IoT.
+                    strengthening algorithmic thinking
+                    and exploring connected technologies
+                    through IoT.
                 </p>
 
             </div>
@@ -2704,7 +2594,6 @@ footer {
     </div>
 
 </section>
-
 
 
 <!-- =========================================================
@@ -2728,8 +2617,9 @@ footer {
 
             <p class="section-description">
 
-                Projects can be added here as they are
-                completed during the B.Tech journey.
+                A space for projects, experiments and
+                practical work developed during my
+                engineering journey.
 
             </p>
 
@@ -2739,8 +2629,6 @@ footer {
         <div class="projects-grid">
 
 
-            <!-- PROJECT 1 -->
-
             <div class="glass project reveal">
 
                 <div class="project-number">
@@ -2748,36 +2636,25 @@ footer {
                 </div>
 
                 <h3>
-                    IoT Project
+                    IoT Smart System
                 </h3>
 
                 <p>
-                    Add an IoT project here.
-                    Describe the sensors, hardware,
-                    software and real-world problem
-                    being solved.
+                    A future IoT project demonstrating
+                    connected devices, sensors,
+                    data collection and automation.
                 </p>
 
                 <div class="project-tech">
 
-                    <span>
-                        IoT
-                    </span>
-
-                    <span>
-                        Sensors
-                    </span>
-
-                    <span>
-                        Embedded
-                    </span>
+                    <span>IoT</span>
+                    <span>Sensors</span>
+                    <span>Embedded</span>
 
                 </div>
 
             </div>
 
-
-            <!-- PROJECT 2 -->
 
             <div class="glass project reveal">
 
@@ -2790,27 +2667,21 @@ footer {
                 </h3>
 
                 <p>
-                    Add a Java project here and describe
-                    the application, features and
-                    programming concepts used.
+                    A Java-based application demonstrating
+                    object-oriented programming,
+                    classes, objects and practical
+                    problem solving.
                 </p>
 
                 <div class="project-tech">
 
-                    <span>
-                        Java
-                    </span>
-
-                    <span>
-                        OOP
-                    </span>
+                    <span>Java</span>
+                    <span>OOP</span>
 
                 </div>
 
             </div>
 
-
-            <!-- PROJECT 3 -->
 
             <div class="glass project reveal">
 
@@ -2823,31 +2694,21 @@ footer {
                 </h3>
 
                 <p>
-                    Add a project demonstrating
-                    data structures, algorithms and
-                    computational problem solving.
+                    A project demonstrating data
+                    structures, algorithms and
+                    efficient computational thinking.
                 </p>
 
                 <div class="project-tech">
 
-                    <span>
-                        C
-                    </span>
-
-                    <span>
-                        DSA
-                    </span>
-
-                    <span>
-                        Algorithms
-                    </span>
+                    <span>C</span>
+                    <span>DSA</span>
+                    <span>Algorithms</span>
 
                 </div>
 
             </div>
 
-
-            <!-- PROJECT 4 -->
 
             <div class="glass project reveal">
 
@@ -2856,28 +2717,20 @@ footer {
                 </div>
 
                 <h3>
-                    Smart System
+                    Connected Technology
                 </h3>
 
                 <p>
-                    Add a smart connected system or
-                    automation project demonstrating
-                    IoT concepts.
+                    An experimental project combining
+                    IoT concepts with software and
+                    connected technologies.
                 </p>
 
                 <div class="project-tech">
 
-                    <span>
-                        IoT
-                    </span>
-
-                    <span>
-                        Automation
-                    </span>
-
-                    <span>
-                        Technology
-                    </span>
+                    <span>IoT</span>
+                    <span>Technology</span>
+                    <span>Innovation</span>
 
                 </div>
 
@@ -2889,7 +2742,6 @@ footer {
     </div>
 
 </section>
-
 
 
 <!-- =========================================================
@@ -2927,7 +2779,7 @@ footer {
                 <p>
 
                     Have a project, idea or opportunity?
-                    Feel free to connect.
+                    I'd be happy to connect.
 
                 </p>
 
@@ -2950,13 +2802,10 @@ footer {
                 </a>
 
 
-                <!-- SOCIAL LINKS -->
-
                 <div class="social-links">
 
 
-                    <!-- INSTAGRAM
-                         Replace # with actual Instagram URL -->
+                    <!-- Replace # with her Instagram URL -->
 
                     <a
                         href="#"
@@ -2970,8 +2819,7 @@ footer {
                     </a>
 
 
-                    <!-- LINKEDIN
-                         Replace # with actual LinkedIn URL -->
+                    <!-- Replace # with her LinkedIn URL -->
 
                     <a
                         href="#"
@@ -2984,8 +2832,6 @@ footer {
 
                     </a>
 
-
-                    <!-- EMAIL -->
 
                     <a
                         href="mailto:akshaya8.marri@gmail.com"
@@ -3007,7 +2853,6 @@ footer {
     </div>
 
 </section>
-
 
 
 <!-- =========================================================
@@ -3035,16 +2880,13 @@ footer {
 </footer>
 
 
-
 <script>
 
 /* =========================================================
    THREE.JS
 ========================================================= */
 
-const scene =
-    new THREE.Scene();
-
+const scene = new THREE.Scene();
 
 const camera =
     new THREE.PerspectiveCamera(
@@ -3055,7 +2897,6 @@ const camera =
         1000
     );
 
-
 camera.position.z = 5;
 
 
@@ -3063,7 +2904,6 @@ const renderer =
     new THREE.WebGLRenderer({
 
         alpha: true,
-
         antialias: true
 
     });
@@ -3097,9 +2937,7 @@ document
 const particleGeometry =
     new THREE.BufferGeometry();
 
-
-const particleCount = 1100;
-
+const particleCount = 1000;
 
 const particlePositions =
     new Float32Array(
@@ -3198,7 +3036,7 @@ scene.add(sphere);
 
 
 /* =========================================================
-   RING
+   TORUS
 ========================================================= */
 
 const ringGeometry =
@@ -3249,10 +3087,9 @@ scene.add(ring);
 
 const floatingObjects = [];
 
-
 for (
     let i = 0;
-    i < 20;
+    i < 18;
     i++
 ) {
 
@@ -3322,7 +3159,6 @@ for (
 ========================================================= */
 
 let mouseX = 0;
-
 let mouseY = 0;
 
 
@@ -3357,7 +3193,9 @@ const clock =
 
 function animate() {
 
-    requestAnimationFrame(animate);
+    requestAnimationFrame(
+        animate
+    );
 
 
     const time =
@@ -3400,7 +3238,7 @@ function animate() {
 
 
     floatingObjects.forEach(
-        (object,index) => {
+        (object, index) => {
 
             object.rotation.x +=
                 0.002;
@@ -3510,7 +3348,9 @@ const observer =
 revealElements.forEach(
     element => {
 
-        observer.observe(element);
+        observer.observe(
+            element
+        );
 
     }
 );
@@ -3574,7 +3414,8 @@ document
             "mouseleave",
             () => {
 
-                card.style.transform = "";
+                card.style.transform =
+                    "";
 
             }
         );
@@ -3640,7 +3481,8 @@ document
             "mouseleave",
             () => {
 
-                card.style.transform = "";
+                card.style.transform =
+                    "";
 
             }
         );
@@ -3648,6 +3490,7 @@ document
     });
 
 </script>
+
 
 </body>
 
